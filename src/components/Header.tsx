@@ -13,7 +13,7 @@ const Header = () => {
 
   return (
     <div>
-      <div className="max-w-7xl h-[12vh] mx-auto flex items-center justify-between py-4 gap-x-12 px-4">
+      <div className="max-w-7xl h-[12vh] mx-auto flex items-center justify-between py-4 gap-x-12 md:px-8 sm:px-6 px-4">
         <div className="flex items-center space-x-6">
           <div className="text-3xl font-bold text-primary">
             <p>Alpha</p>
