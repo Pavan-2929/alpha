@@ -6,7 +6,7 @@ const About = () => {
     return (
         <Container>
             <motion.div
-                className="text-center mb-6 mt-20 "
+                className="text-center mb-6 mt-20"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1.5 }}
@@ -19,6 +19,9 @@ const About = () => {
                     className="card bg-white shadow-lg rounded-lg p-6 text-center hover:scale-105 transition-transform duration-300"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
                 >
                     <FaCarSide className="text-4xl text-blue-600 mb-4 mx-auto" />
                     <h3 className="text-xl font-semibold text-gray-800">Car Listings</h3>
@@ -29,6 +32,9 @@ const About = () => {
                     className="card bg-white shadow-lg rounded-lg p-6 text-center hover:scale-105 transition-transform duration-300"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
                 >
                     <FaCheckCircle className="text-4xl text-green-500 mb-4 mx-auto" />
                     <h3 className="text-xl font-semibold text-gray-800">Verified Sellers</h3>
@@ -39,6 +45,9 @@ const About = () => {
                     className="card bg-white shadow-lg rounded-lg p-6 text-center hover:scale-105 transition-transform duration-300"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.6 }}
                 >
                     <FaUsers className="text-4xl text-yellow-500 mb-4 mx-auto" />
                     <h3 className="text-xl font-semibold text-gray-800">Customer Support</h3>
@@ -49,6 +58,9 @@ const About = () => {
                     className="card bg-white shadow-lg rounded-lg p-6 text-center hover:scale-105 transition-transform duration-300"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 0.8 }}
                 >
                     <FaShieldAlt className="text-4xl text-blue-600 mb-4 mx-auto" />
                     <h3 className="text-xl font-semibold text-gray-800">Secure Transactions</h3>
@@ -59,6 +71,9 @@ const About = () => {
                     className="card bg-white shadow-lg rounded-lg p-6 text-center hover:scale-105 transition-transform duration-300"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.5, delay: 1 }}
                 >
                     <FaRoad className="text-4xl text-red-600 mb-4 mx-auto" />
                     <h3 className="text-xl font-semibold text-gray-800">Wide Range of Cars</h3>
