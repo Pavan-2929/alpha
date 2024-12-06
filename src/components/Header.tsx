@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CircleUser, Heart, Search } from "lucide-react";
 import { Menu, X } from "lucide-react";
-import { MdArrowDropDown, MdDirectionsCar, MdInfo } from "react-icons/md";
+import { MdDirectionsCar, MdInfo } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/logo.png"
 
@@ -90,16 +90,18 @@ const Header = () => {
       </div>
 
       {isMenuOpen && (
-        <div className="lg:hidden flex flex-col space-y-4 shadow-lg rounded-lg p-4">
-          {["Buy Car", "Sell Car", "More"].map((item) => (
-            <div
-              key={item}
-              className="flex items-center justify-center cursor-pointer hover:text-[#168a2e] transition-colors"
-            >
-              {item}
-              <MdArrowDropDown className="text-gray-500 font-bold" size={24} />
-            </div>
-          ))}
+        <div className="lg:hidden flex flex-col space-y-5 shadow-lg rounded-lg p-4">
+          <NavLink
+            to="/car/bmw"
+            className="group flex items-center justify-center cursor-pointer hover:text-[#168a2e] transition-colors"
+          >
+            <MdDirectionsCar className="mr-2" size={24} />
+            Buy Car
+          </NavLink>
+          <NavLink to="/about" className="group flex items-center justify-center cursor-pointer hover:text-[#168a2e] transition-colors">
+            <MdInfo className="mr-2" size={24} />
+            About
+          </NavLink>
           <div className="flex flex-col items-center justify-center">
             <Heart />
             <p className="text-sm">Shortlisted</p>

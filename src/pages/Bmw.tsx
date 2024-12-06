@@ -23,6 +23,13 @@ import {
 } from "@/components/ui/dialog";
 import EMI from "../components/EMI";
 import { Link } from "react-router-dom";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 
 function Bmw() {
   const [nav1, setNav1] = useState<Slider | null>(null);
@@ -39,18 +46,18 @@ function Bmw() {
     <div className="min-h-screen pt-16 pb-24">
       <Container>
         <div className="flex flex-wrap md:flex-nowrap gap-x-12">
-          <div className="flex flex-col">
+          <div className="md:flex hidden flex-col">
 
             <div className="w-full md:max-w-[750px] relative">
               <button
                 onClick={() => sliderRef1?.current?.slickPrev()}
-                className="absolute top-1/2 left-2 transform z-50 -translate-y-1/2 text-white bg-primary p-2 rounded-full hover:bg-green-700 transition-all"
+                className="md:inline-block hidden absolute top-1/2 left-2 transform z-50 -translate-y-1/2 text-white bg-primary p-2 rounded-full hover:bg-green-700 transition-all"
               >
                 <FiArrowRight className="rotate-180" size={24} />
               </button>
               <button
                 onClick={() => sliderRef1?.current?.slickNext()}
-                className="absolute top-1/2 right-2 transform z-50 -translate-y-1/2 text-white bg-primary p-2 rounded-full hover:bg-green-700 transition-all"
+                className="md:inline-block hidden absolute top-1/2 right-2 transform z-50 -translate-y-1/2 text-white bg-primary p-2 rounded-full hover:bg-green-700 transition-all"
               >
                 <FiArrowRight size={24} />
               </button>
@@ -75,10 +82,8 @@ function Bmw() {
                   </div>
                 ))}
               </Slider>
-
             </div>
             <div className="max-w-[750px] ">
-
               <Slider
                 asNavFor={nav1 ?? undefined}
                 ref={sliderRef2}
@@ -99,6 +104,17 @@ function Bmw() {
               </Slider>
             </div>
           </div>
+          <div className="md:hidden flex pb-12">
+            <Carousel>
+              <CarouselContent>
+                {carImages.map((image, index) => (
+                  <CarouselItem key={index}>
+                    <img src={image} alt={`Car Image ${index + 1}`} />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
+          </div>
           <div className="w-full space-y-6">
             <div className="w-full space-y-6">
               <div className="text-white bg-gradient-to-r from-purple-600 to-pink-500 px-6 py-3 flex items-center justify-between text-sm rounded-3xl animate-pulse">
@@ -106,7 +122,7 @@ function Bmw() {
                   Sweet <br /> December
                 </p>
                 <div className="flex space-x-4 items-center">
-                  <RiCoupon2Fill className="text-white text-2xl" />
+                  <RiCoupon2Fill className="text-white text-2xl md:inline-block hidden" />
                   <p className="text-[13px]">
                     Free car for 3 lucky winners <br /> and trip to Paris
                   </p>

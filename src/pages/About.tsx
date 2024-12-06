@@ -20,7 +20,7 @@ const About = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                 >
-                    <FaCarSide className="text-4xl text-blue-600 mb-4" />
+                    <FaCarSide className="text-4xl text-blue-600 mb-4 mx-auto" />
                     <h3 className="text-xl font-semibold text-gray-800">Car Listings</h3>
                     <p className="text-gray-600 mt-2">Explore a wide variety of cars with detailed specifications, pictures, and pricing. We offer the best deals in the market!</p>
                 </motion.div>
@@ -30,7 +30,7 @@ const About = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                 >
-                    <FaCheckCircle className="text-4xl text-green-500 mb-4" />
+                    <FaCheckCircle className="text-4xl text-green-500 mb-4 mx-auto" />
                     <h3 className="text-xl font-semibold text-gray-800">Verified Sellers</h3>
                     <p className="text-gray-600 mt-2">All our listings are from verified sellers to ensure a smooth, secure, and trustworthy transaction.</p>
                 </motion.div>
@@ -40,7 +40,7 @@ const About = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                 >
-                    <FaUsers className="text-4xl text-yellow-500 mb-4" />
+                    <FaUsers className="text-4xl text-yellow-500 mb-4 mx-auto" />
                     <h3 className="text-xl font-semibold text-gray-800">Customer Support</h3>
                     <p className="text-gray-600 mt-2">We are always available to help you with any questions or concerns you have during your car buying experience.</p>
                 </motion.div>
@@ -50,7 +50,7 @@ const About = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                 >
-                    <FaShieldAlt className="text-4xl text-blue-600 mb-4" />
+                    <FaShieldAlt className="text-4xl text-blue-600 mb-4 mx-auto" />
                     <h3 className="text-xl font-semibold text-gray-800">Secure Transactions</h3>
                     <p className="text-gray-600 mt-2">We ensure all transactions are secure and smooth. Your safety is our top priority.</p>
                 </motion.div>
@@ -60,7 +60,7 @@ const About = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                 >
-                    <FaRoad className="text-4xl text-red-600 mb-4" />
+                    <FaRoad className="text-4xl text-red-600 mb-4 mx-auto" />
                     <h3 className="text-xl font-semibold text-gray-800">Wide Range of Cars</h3>
                     <p className="text-gray-600 mt-2">Whether you're looking for a sedan, SUV, or sports car, we have a wide selection to choose from, all with detailed info.</p>
                 </motion.div>

@@ -1,4 +1,3 @@
-import React from "react";
 import Container from "./Container";
 import work1 from "../assets/work/work1.jpeg";
 import work2 from "../assets/work/work2.jpeg";
