@@ -1,5 +1,6 @@
 import Work from "@/components/Work"
 import landing from "../assets/landing.png"
+import Car1 from "@/components/cars/Car1"
 const Home = () => {
     return (
         <>
@@ -31,6 +32,9 @@ const Home = () => {
             </div >
             <div>
                 <Work />
+            </div>
+            <div>
+                <Car1 />
             </div>
         </>
     )
