@@ -13,6 +13,7 @@ export const carData = {
   id: 1,
   title: "2021 Mahindra Thar LX 4 STR Hard Top Diesel MT 4WD",
   details: {
+    year: 2021,
     kilometers: "13K km",
     fuelType: "Diesel",
     transmission: "Manual",
@@ -20,8 +21,7 @@ export const carData = {
     warranty: "Latest cars, 3 year warranty",
   },
   price: "13.26 Lakh",
-  status: "Fixed on road price",
-  availability: "This inventory is  available with us.",
+  availability: "This inventory is available with us.",
 };
 
 export const inspectionData = [

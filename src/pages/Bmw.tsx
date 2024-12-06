@@ -151,10 +151,16 @@ function Bmw() {
                   {carData.title}
                 </h2>
                 <div className="space-y-2 text-gray-600">
-                  <p>
-                    <span className="font-medium">Kilometers:</span>{" "}
-                    {carData.details.kilometers}
-                  </p>
+                  <div className="flex gap-x-6  flex-wrap">
+                    <p>
+                      <span className="font-medium">Kilometers:</span>{" "}
+                      {carData.details.kilometers}
+                    </p>
+                    <p>
+                      <span className="font-medium">Year:</span>{" "}
+                      {carData.details.year}
+                    </p>
+                  </div>
                   <p>
                     <span className="font-medium">Fuel Type:</span>{" "}
                     {carData.details.fuelType}
@@ -218,7 +224,7 @@ function Bmw() {
                 <p className="font-bold text-gray-800">3-Year Warranty</p>
                 <p className="text-sm text-gray-600">
                   Assured Plus car that comes in flawless condition and 3-year
-                  powertrain warranty.
+                  warranty.
                 </p>
               </div>
             </motion.div>
