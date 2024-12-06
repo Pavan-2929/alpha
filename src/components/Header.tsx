@@ -1,38 +1,56 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { CircleUser, Heart, Search } from "lucide-react";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { MdArrowDropDown, MdDirectionsCar, MdInfo } from "react-icons/md";
 import { NavLink } from "react-router-dom";
-
+import logo from "../assets/logo.png"
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+    setSearchTerm("")
+    e.preventDefault();
+
+    navigate("/car/bmw");
+  };
+
   return (
     <div>
       <div className="max-w-7xl h-[12vh] mx-auto flex items-center justify-between py-4 gap-x-12 md:px-8 sm:px-6 px-4">
-        <div className="flex items-center space-x-6">
-          <div className="text-3xl font-bold text-primary">
-            <NavLink to="/">Alpha</NavLink>
+        <div className="flex items-center space-x-10">
+          <div className="flex items-center gap-x-2">
+            <div>
+              <img src={logo} alt="" className="size-14" />
+            </div>
+            <div className="text-3xl font-bold text-primary font-sans">
+              <NavLink to="/">Alpha</NavLink>
+            </div>
           </div>
-          <div className="hidden lg:flex items-center gap-x-2 border border-gray-400 rounded-3xl px-4 py-[8px] hover:shadow-lg transition-shadow">
-            <p className="text-sm">Location</p>
-            <ChevronDown className="text-gray-500 pt-1 font-bold" size={24} />
-          </div>
-          <div className="hidden lg:flex items-center relative w-[280px] rounded-3xl border border-gray-400 py-2 px-4 hover:shadow-lg transition-shadow">
+          <form
+            onSubmit={handleSearch}
+            className="hidden lg:flex items-center relative w-[280px] rounded-3xl border border-gray-400 py-2 px-4 hover:shadow-lg transition-shadow"
+          >
             <input
               placeholder="Enter car name"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full focus-visible:outline-none"
             />
-            <Search
-              className="absolute top-1/2 right-0 -translate-y-1/2 mr-3 text-gray-500"
-              size={18}
-            />
-          </div>
+            <button type="submit">
+              <Search
+                className="absolute top-1/2 right-0 -translate-y-1/2 mr-3 text-gray-500"
+                size={18}
+              />
+            </button>
+          </form>
         </div>
 
         <div className="lg:hidden flex items-center">
@@ -49,11 +67,14 @@ const Header = () => {
             <MdDirectionsCar className="mr-2" size={24} />
             Buy Car
           </NavLink>
-          <p className="group flex items-center cursor-pointer hover:text-[#168a2e] transition-colors">
+          <NavLink to="/about" className="group flex items-center cursor-pointer hover:text-[#168a2e] transition-colors">
             <MdInfo className="mr-2" size={24} />
             About
-          </p>
-          <NavLink to="/car/bmw" className="flex flex-col items-center justify-center group">
+          </NavLink>
+          <NavLink
+            to="/car/bmw"
+            className="flex flex-col items-center justify-center group"
+          >
             <Heart className="group-hover:scale-110 transition-transform duration-300" />
             <p className="text-sm">Shortlisted</p>
           </NavLink>

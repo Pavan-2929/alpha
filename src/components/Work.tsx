@@ -3,11 +3,13 @@ import Container from "./Container";
 import work1 from "../assets/work/work1.jpeg";
 import work2 from "../assets/work/work2.jpeg";
 import work3 from "../assets/work/work3.jpeg";
+import { Link } from "react-router-dom";
+import { MdArrowForward } from "react-icons/md";
 
 const Work = () => {
   return (
     <Container>
-      <div className="text-center py-16">
+      <div className="text-center py-16 ">
         <div className="mb-12">
           <p className="text-4xl font-bold text-primary">How Spinny Works</p>
           <p className="text-lg text-gray-600 mt-2">
@@ -52,14 +54,18 @@ const Work = () => {
             <p className="text-gray-600">Book a home test drive or visit us</p>
           </div>
         </div>
-        <div className="mt-12 text-center">
+        <div className="mt-20 text-center">
           <h2 className="text-2xl font-bold text-gray-800">Ready to Find Your Dream Car?</h2>
           <p className="text-gray-600 mt-2">
             Explore thousands of fully inspected cars and book a test drive today!
           </p>
-          <button className="mt-6 bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition-colors">
-            Browse Cars
-          </button>
+          <Link
+            to="/car/bmw"
+            className="px-6 py-3 w-fit mx-auto mt-6 bg-primary hover:bg-green-600 text-white rounded-lg shadow-lg flex items-center"
+          >
+            Explore Now
+            <MdArrowForward className="ml-2" size={20} />{" "}
+          </Link>
         </div>
 
       </div>

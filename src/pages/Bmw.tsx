@@ -9,9 +9,9 @@ import { AiFillSafetyCertificate } from "react-icons/ai";
 import { MdOutlineWorkspacePremium } from "react-icons/md";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Container from "./Container";
+import Container from "../components/Container";
 import { carData } from "@/data/bmw";
-import FAQAccordion from "./FAQAccordion";
+import FAQAccordion from "../components/FAQAccordion";
 import { TbView360Number } from "react-icons/tb";
 import {
   Dialog,
@@ -21,7 +21,8 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import EMI from "./EMI";
+import EMI from "../components/EMI";
+import { Link } from "react-router-dom";
 
 function Bmw() {
   const [nav1, setNav1] = useState<Slider | null>(null);
@@ -146,9 +147,9 @@ function Bmw() {
                       {carData.availability}
                     </p>
                   </div>
-                  <div>
+                  <Link to="/bmw/360">
                     <TbView360Number className="text-primary size-10 cursor-pointer" />
-                  </div>
+                  </Link>
                 </div>
                 <div className="h-0.5 bg-gray-300" />
                 <Dialog>
