@@ -68,3 +68,31 @@ export const inspectionData = [
     description: "Suspension, brakes, and steering are in excellent condition.",
   },
 ];
+
+export const faqs = [
+  {
+    question: "How do I list my car for sale?",
+    answer:
+      "To list your car, sign up or log in, navigate to 'Sell My Car', and provide details like model, year, and mileage. Upload high-quality photos for better visibility.",
+  },
+  {
+    question: "What documents do I need to sell my car?",
+    answer:
+      "You need the car’s registration certificate (RC), insurance papers, and a valid ID proof to complete the sale.",
+  },
+  {
+    question: "How is the car price determined?",
+    answer:
+      "Car prices are determined based on model, year, mileage, condition, and market trends. Our AI-powered valuation tool ensures fair pricing.",
+  },
+  {
+    question: "Is financing available for buying cars?",
+    answer:
+      "Yes, we provide financing options through our trusted partners. Check eligibility during checkout for easy EMIs.",
+  },
+  {
+    question: "Are test drives available?",
+    answer:
+      "Absolutely! Schedule a test drive at your convenience through the car’s detail page.",
+  },
+];

@@ -11,6 +11,17 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Container from "./Container";
 import { carData } from "@/data/bmw";
+import FAQAccordion from "./FAQAccordion";
+import { TbView360Number } from "react-icons/tb";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import EMI from "./EMI";
 
 function Bmw() {
   const [nav1, setNav1] = useState<Slider | null>(null);
@@ -24,48 +35,68 @@ function Bmw() {
   }, []);
 
   return (
-    <div className="bg-gray-100 min-h-screen py-10">
+    <div className="min-h-screen pt-16 pb-24">
       <Container>
-        <div className="flex flex-wrap md:flex-nowrap gap-8">
-          <div className="w-full md:max-w-3xl">
-            <Slider
-              asNavFor={nav2 ?? undefined}
-              ref={sliderRef1}
-              fade={true}
-              autoplay={true}
-              autoplaySpeed={3000}
-            >
-              {carImages.map((image, index) => (
-                <div
-                  key={index}
-                  className="overflow-hidden rounded-lg shadow-lg"
-                >
-                  <img
-                    src={image}
-                    alt={`Car ${index + 1}`}
-                    className="w-full h-96 object-cover hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-              ))}
-            </Slider>
-            <Slider
-              asNavFor={nav1 ?? undefined}
-              ref={sliderRef2}
-              slidesToShow={4}
-              swipeToSlide={true}
-              focusOnSelect={true}
-              className="mt-4"
-            >
-              {carImages.map((image, index) => (
-                <div key={index} className="p-2">
-                  <img
-                    src={image}
-                    alt={`Thumbnail ${index + 1}`}
-                    className="w-full h-20 object-cover rounded-md border border-gray-300 hover:border-blue-500 transition-all"
-                  />
-                </div>
-              ))}
-            </Slider>
+        <div className="flex flex-wrap md:flex-nowrap gap-x-12">
+          <div className="flex flex-col">
+
+            <div className="w-full md:max-w-[750px] relative">
+              <button
+                onClick={() => sliderRef1?.current?.slickPrev()}
+                className="absolute top-1/2 left-2 transform z-50 -translate-y-1/2 text-white bg-primary p-2 rounded-full hover:bg-green-700 transition-all"
+              >
+                <FiArrowRight className="rotate-180" size={24} />
+              </button>
+              <button
+                onClick={() => sliderRef1?.current?.slickNext()}
+                className="absolute top-1/2 right-2 transform z-50 -translate-y-1/2 text-white bg-primary p-2 rounded-full hover:bg-green-700 transition-all"
+              >
+                <FiArrowRight size={24} />
+              </button>
+
+              <Slider
+                asNavFor={nav2 ?? undefined}
+                ref={sliderRef1}
+                fade={true}
+                autoplay={true}
+                autoplaySpeed={3000}
+              >
+                {carImages.map((image, index) => (
+                  <div
+                    key={index}
+                    className="overflow-hidden rounded-lg shadow-lg"
+                  >
+                    <img
+                      src={image}
+                      alt={`Car ${index + 1}`}
+                      className="w-full h-96 object-cover hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                ))}
+              </Slider>
+
+            </div>
+            <div className="max-w-[750px] ">
+
+              <Slider
+                asNavFor={nav1 ?? undefined}
+                ref={sliderRef2}
+                slidesToShow={4}
+                swipeToSlide={true}
+                focusOnSelect={true}
+                className="mt-4"
+              >
+                {carImages.map((image, index) => (
+                  <div key={index} className="p-2">
+                    <img
+                      src={image}
+                      alt={`Thumbnail ${index + 1}`}
+                      className="w-full h-20 object-cover rounded-md border border-gray-300 hover:border-blue-500 transition-all"
+                    />
+                  </div>
+                ))}
+              </Slider>
+            </div>
           </div>
           <div className="w-full space-y-6">
             <div className="w-full space-y-6">
@@ -103,22 +134,37 @@ function Bmw() {
                   <p>{carData.details.location}</p>
                 </div>
                 <div className="h-0.5 bg-gray-300" />
-                <div className="space-y-2">
-                  <div className="flex items-center space-x-2 text-gray-800">
-                    <IndianRupee className="text-xl" />
-                    <span className="text-lg font-semibold">
-                      {carData.price}
-                    </span>
+                <div className="flex justify-between items-center">
+                  <div className="space-y-2">
+                    <div className="flex items-center space-x-2 text-gray-800">
+                      <IndianRupee className="text-xl" />
+                      <span className="text-lg font-semibold">
+                        {carData.price}
+                      </span>
+                    </div>
+                    <p className="text-sm text-green-600 font-medium">
+                      {carData.availability}
+                    </p>
                   </div>
-                  <p className="text-sm text-green-600 font-medium">
-                    {carData.availability}
-                  </p>
+                  <div>
+                    <TbView360Number className="text-primary size-10 cursor-pointer" />
+                  </div>
                 </div>
                 <div className="h-0.5 bg-gray-300" />
-                <button className="w-full py-3 bg-green-500 text-white font-medium rounded-md hover:bg-green-600 transition-all flex items-center justify-center space-x-2">
-                  <span>Check Loan Eligibility</span>
-                  <FiArrowRight />
-                </button>
+                <Dialog>
+                  <DialogTrigger className="w-full py-3 bg-green-500 text-white font-medium rounded-md hover:bg-green-600 transition-all flex items-center justify-center space-x-2">
+                    <span>Check Loan Eligibility</span>
+                    <FiArrowRight />
+                  </DialogTrigger>
+                  <DialogContent>
+                    <DialogHeader>
+                      <DialogTitle>Check Eligibility</DialogTitle>
+                      <DialogDescription>
+                        <EMI />
+                      </DialogDescription>
+                    </DialogHeader>
+                  </DialogContent>
+                </Dialog>
               </div>
             </div>
           </div>
@@ -183,6 +229,7 @@ function Bmw() {
             ))}
           </div>
         </div>
+        <FAQAccordion />
       </Container>
     </div>
   );
